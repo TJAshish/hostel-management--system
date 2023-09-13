@@ -1,30 +1,28 @@
 package com.hostelmanagmentsystem.api.exceptions;
 
-import lombok.Getter; 
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class ResourceNotFoundException extends RuntimeException{
 	String resourceName;
 	String FieldName;
 	Integer fieldValue;
 	Long fieldValuel;
 	
-	public ResourceNotFoundException(String resourceName, String fieldName, Integer id) {
-		super(String.format("%s not found with %s : %s",resourceName,fieldName,id));
+	public ResourceNotFoundException(String resourceName, String fieldName, Integer rid) {
+		super(String.format("%s not found with %s : %d",resourceName,fieldName,rid));
 		this.resourceName = resourceName;
 		FieldName = fieldName;
-		this.fieldValue = id;
+		this.fieldValue = rid;
 	}
-	public ResourceNotFoundException(String resourceName, String fieldName, Long id) {
-		super(String.format("%s not found with %s : %s",resourceName,fieldName,id));
+	public ResourceNotFoundException(String resourceName, String fieldName, Long sid) {
+		super(String.format("%s not found with %s : %s",resourceName,fieldName,sid));
 		this.resourceName = resourceName;
 		FieldName = fieldName;
-		this.fieldValuel = id;
+		this.fieldValuel = sid;
 	}
 	public ResourceNotFoundException(String resourceName, String fieldName, Long sid ,Integer rid) {
-		super(String.format("%s not found with %s : %s",resourceName,fieldName,sid ,rid));
+		super(String.format("%s not found with %s : %s %d",resourceName,fieldName,sid ,rid));
 		this.resourceName = resourceName;
 		FieldName = fieldName;
 		this.fieldValuel = sid;
