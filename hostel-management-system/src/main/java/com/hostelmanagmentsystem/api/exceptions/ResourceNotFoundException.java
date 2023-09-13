@@ -22,7 +22,7 @@ public class ResourceNotFoundException extends RuntimeException{
 		this.fieldValuel = sid;
 	}
 	public ResourceNotFoundException(String resourceName, String fieldName, Long sid ,Integer rid) {
-		super(String.format("%s not found with %s : %s %d",resourceName,fieldName,sid ,rid));
+		super(String.format("%s not found with %s : %s/%d",resourceName,fieldName,sid ,rid));
 		this.resourceName = resourceName;
 		FieldName = fieldName;
 		this.fieldValuel = sid;
